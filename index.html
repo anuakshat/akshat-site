@@ -10,5 +10,50 @@
     i have learnt so far things which i have always been thriving.
     i m learning on cli app and showcase it tommorow.
     i m adding detials of my favourite book thats is one to zero by peter thiel
+    const chalk = require('chalk');
+    var readLineSync =require('readline-sync');
+    var name=readLineSync.question(chalk.yellow("whats your name? "));
+    var score=0;
+    console.log(chalk.blue("hey welcome "+name));
+    console.log(chalk.blue("do you know tanay "+name));
+    function play(question, answer)
+    {
+      var useranswer=readLineSync.question(chalk.magenta(question));
+      if (useranswer===answer)
+      {
+        console.log(chalk.green("you are right"));
+         score = score + 1
+      }else
+      {
+        console.log(chalk.red("you are wrong"));
+      }
+      console.log("your current score is "+score)
+    }
+      var series=[
+      {
+        question: "what is the name of iron man?\n\
+                  a)tony stark\n\
+                  b)dr. bruce banner\n\
+                  c)Black widow \n\
+                  ",
+        answer:"a"
+      },
+      {
+        question:"what is the name of hulk?\n\
+        a)dr. bruce banner\n\
+        b)thor\n\
+        c)Hawk Eye\n\
+        ",
+        answer:"a"
+      }
+    ];
+    
+      for( var i=0;i<series.length;i=i+1 )
+      {
+        var quiz=series[i];
+        play(quiz.question,quiz.answer);
+      }
+      
+      
 </body>
 </html>
